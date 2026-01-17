@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Form */
+        .admin-login-form {
+            max-width: 350px;
+            margin: 50px auto;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .admin-login-form a{
+            text-decoration: none;
+        }
+
+        .admin-login-form input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .admin-login-form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0d6efd;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .admin-login-form button:hover {
+            background-color: #0b5ed7;
+        }
+    </style>
+</head>
+
+<body>
+   <!-- Admin Login Form -->
+<div id="adminLoginForm" class="admin-login-form">
+    <h3>Admin Login</h3>
+    <input type="password" id="adminPassword" placeholder="Enter Admin Password">
+    <button onclick="loginAdmin()">Login</button>
+    <p id="loginMessage" style="color:red;"></p>
+</div>
+
+<script>
+    // Correct admin password
+    const ADMIN_PASSWORD = "admin123"; // Change this
+
+    // Login function
+    function loginAdmin() {
+        const password = document.getElementById("adminPassword").value;
+        const message = document.getElementById("loginMessage");
+
+        if (password === ADMIN_PASSWORD) {
+            // correct password
+            localStorage.setItem("role", "admin");
+            // Redirect to strategy page
+            window.location.href = "strate.html"; 
+        } else {
+            // wrong password
+            message.textContent = "Incorrect password!";
+        }
+    }
+</script>
+
+</body>
+
+</html>
