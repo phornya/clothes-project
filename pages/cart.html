@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-      <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart page</title>
 
@@ -53,6 +53,46 @@
             </div>
         </div>
     </nav>
+    <div class="container my-5 cart-container">
+        <h2 class="cart-title mb-4">Your Cart</h2>
+
+        <div class="table-responsive">
+            <table class="table cart-table align-middle">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Qty</th>
+                        <th class="text-end">Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+        </div>
+
+        <div class="cart-footer mt-4 d-flex justify-content-between align-items-center">
+            <h4 class="grand-total">
+                Grand Total:
+                <span>$</span><span id="grand-total">0</span>
+            </h4>
+
+            <div class="cart-actions">
+                <button class="btn btn-clear" onclick="clearCart()">
+                    <i class="bi bi-trash me-2"></i> Clear Cart
+                </button>
+
+                <a href="checkout.html" class="btn btn-checkout ms-3">
+                    Proceed to Checkout <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../assets/js/cart.js"></script>
+
 </body>
 
 </html>
