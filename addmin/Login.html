@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0d6efd, #6610f2);
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Admin Card */
+        .admin-login-form {
+            width: 100%;
+            max-width: 380px;
+            background: #fff;
+            padding: 35px 30px;
+            border-radius: 14px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .admin-login-form h3 {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .admin-login-form p.subtitle {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        /* Input */
+        .admin-login-form input {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .admin-login-form input:focus {
+            outline: none;
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+        }
+
+        /* Button */
+        .admin-login-form button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #0d6efd;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .admin-login-form button:hover {
+            background: #0b5ed7;
+            transform: translateY(-1px);
+        }
+
+        /* Error Message */
+        #loginMessage {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #dc3545;
+        }
+
+        /* Footer text */
+        .admin-login-form .footer-text {
+            margin-top: 18px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Admin Login -->
+    <div id="adminLoginForm" class="admin-login-form">
+        <h3>Admin Login</h3>
+        <p class="subtitle">Access restricted to administrators</p>
+
+        <input type="password" id="adminPassword" placeholder="Enter Admin Password">
+        <button onclick="loginAdmin()">Login</button><br><br>
+        <a href="../index.html"><button> Back home</button></a>
+
+        <p id="loginMessage"></p>
+        <p class="footer-text">© 2026 Admin Panel</p>
+    </div>
+
+    <script>
+        const ADMIN_PASSWORD = "admin123"; // Change this
+
+        function loginAdmin() {
+            const password = document.getElementById("adminPassword").value;
+            const message = document.getElementById("loginMessage");
+
+            if (password === ADMIN_PASSWORD) {
+                localStorage.setItem("role", "admin");
+                window.location.href = "strate.html";
+            } else {
+                message.textContent = "Incorrect password!";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
