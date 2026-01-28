@@ -19,7 +19,7 @@ a {
 /* ===== Banner ===== */
 .banner {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(https://www.webfx.com/wp-content/uploads/2023/08/032431_40_Best_Contact_Us_Page_Designs.png); 
+        url(https://www.webfx.com/wp-content/uploads/2023/08/032431_40_Best_Contact_Us_Page_Designs.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -91,6 +91,57 @@ section.gray {
     color: #555;
     margin-bottom: 15px;
 }
+
+
+/* ===== Team Section ===== */
+.team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.title{
+    /* color: blue; */
+    display: flex;
+    justify-content: center;
+}
+.member {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.member h3 {
+    margin-bottom: 5px;
+}
+
+.role {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.desc {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Hover Effect */
+.member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
 
 /* ===== Info Boxes ===== */
 .info-boxes {
@@ -257,7 +308,7 @@ section.gray {
 .about {
     /* padding: 80px 10%; */
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     /* background: #f9f9f9; */
 }
@@ -306,5 +357,3 @@ section.gray {
         transform: translateY(0);
     }
 }
-
-
